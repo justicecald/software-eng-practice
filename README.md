@@ -1,6 +1,6 @@
 # Software Engineering Practice Repo
 
-![README header]()
+![README header](banner.jpg)
 
 Hello! 😜
 
