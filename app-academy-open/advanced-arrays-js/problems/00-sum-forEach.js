@@ -13,11 +13,13 @@ console.log(sumForEach([])); // 0
 
 let sumForEach = function(arr) {
   // Your code here
-  // Using the reduce method:
-  let output = arr.reduce(function (sum, el) {
-    return sum + el;
+  let sum = 0;
+
+  arr.forEach(function(num){
+    sum += num;
   });
-  return output;
+
+  return sum;
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

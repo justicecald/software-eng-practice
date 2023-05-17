@@ -28,7 +28,7 @@ console.log(chooseyEndings(17, 'ily'));
 let chooseyEndings = function(words, suffix) {
   // Your code here
 
-  if (typeof words != 'array') {
+  if (typeof words != 'object') {
     return [];
   } else {
     let output = words.filter( function (word) {

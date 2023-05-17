@@ -17,7 +17,7 @@ let removeEWords = function(sentence) {
     let words = sentence.split(" ");
     
     let nonEWords = words.filter( function (word) {
-      return (!word.includes("e") || !word.includes("E"));
+      return (!word.includes('e') || !word.includes('e'));
     });
 
     let output = nonEWords.join(" ");
