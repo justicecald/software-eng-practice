@@ -1,5 +1,2 @@
-function returnWhat() {
-    return;
-}
-
-console.log(returnWhat())
+let [i, j] = [1, 2]
+console.log(i, j)
