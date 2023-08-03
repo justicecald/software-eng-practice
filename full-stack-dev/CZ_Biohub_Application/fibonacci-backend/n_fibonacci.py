@@ -3,13 +3,12 @@
 The principal for this application is to use the module to generate the first n fibonacci numbers
 '''
 from __future__ import annotations
+from flask import Flask, jsonify
 
+app = Flask(__name__)
+
+# Function for generating the n_fibonacci numbers recursively
 def n_fibonacci(n: int, arr: list[int]) -> list[int]:
-    '''
-    Implementing a recursive solution, we have the base cases for n=0 and n=1
-    
-    The recursive cases would be for n > 1
-    '''
     # Base cases:
     if n == 0:
         return arr
@@ -28,3 +27,14 @@ def n_fibonacci(n: int, arr: list[int]) -> list[int]:
         arr = prev_fib_nums + [new_fib_num]
 
     return arr
+
+@app.route('/fibonacci/<int:num>', methods=['GET'])
+def get_fibonacci_numbers(num: int):
+    if num < 1:
+        return jsonify(error='Please enter a positive integer.'), 400
+    
+    fib_numbers = n_fibonacci(num, [])
+    return jsonify(fibonacci_numbers = fib_numbers)
+
+if __name__ == '__main__':
+    app.run()
